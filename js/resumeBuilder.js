@@ -25,15 +25,15 @@ $("#header").append(formattedBioImg);
 
 var bio = {
 	"name" : "Mikel Zuzuarregui",
-	"role" : "Student",
+	"role" : "Research Student",
 	"contacts" : {
 		"mobile" : "085-821-2480",
 		"email" : "mikelzuzu@gmail.com",
 		"github" : "mikelzuzu",
 		"location" : "Athlone"
 	},
-	"wellComeMessage" : "Ongi Etorri nere etxera",
-	"skills" : ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
+	"wellComeMessage" : "Hello everyone, I hope you enjoy my page",
+	"skills" : ["Ability to work in teams", "Communication skills", "Serious", "Responsible"],
 	//"bioPic" : "http://www.topdreamer.com/wp-content/uploads/2013/03/Interesting-Ideas-Fruit-and-Vegetable-Art-25.jpg"
 	"bioPic" : "images/fry.jpg"
 }
@@ -72,14 +72,21 @@ var work = {
 		"employer" : "AIT",
 		"title" : "Master Student",
 		"location" : "Athlone",
-		"date" : 2014,
-		"Description" : "research around recommender systems"
+		"date" : "01 September 2013 - Future",
+		"Description" : "Research around recommender systems"
+	},
+	{
+		"employer" : "Ericsson LMI",
+		"title" : "Trainee Engineer",
+		"location" : "Athlone",
+		"date" : "15 September 2013 - Future",
+		"Description" : "Research around recommender systems"
 	},
 	{
 		"employer" : "Zitu",
 		"title" : "Solution architecture",
 		"location" : "San Sebastian",
-		"date" : 2009,
+		"date" : "01 July 2007  – 26 September 2009",
 		"Description" : "Build a system to manage shops, restaurants and so on"
 	}]
 };
@@ -87,16 +94,16 @@ var project = {
 	"projects" : [
 	{
 		"title" : "Recommender system",
-		"dates" : "2014",
+		"dates" : "March 2014 - Future",
 		"description" : "query suggestion area",
 		"images" : [
-			"http://gethue.com/wp-content/uploads/2014/03/hue-3.6-search-v2.png",
+			"images/hue.png",
 			"http://www.poolparty-software.com/wp-content/uploads/2013/03/recommender_systems.jpg"
 		]
 	},
 		{
 		"title" : "Antenna tilt",
-		"dates" : "2014",
+		"dates" : "December 2013  – March 2014",
 		"description" : "Introduce percepton based machine learning",
 		"images" : [
 			"http://www.proxim.com/scripts/calculators/tiltangle.jpg",
@@ -115,14 +122,15 @@ var formattedBioGit = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedBioImg = HTMLbioPic.replace("%data%", bio.bioPic);
 var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.wellComeMessage);
 
-$("#header").append(formattedBioName);
-$("#header").append(formattedBioRole);
-$("#header").append(formattedBioMobile);
-$("#header").append(formattedBioEmail);
-$("#header").append(formattedBioLocation);
-$("#header").append(formattedBioGit);
+$("#header").prepend(formattedBioRole);
+$("#header").prepend(formattedBioName);
 $("#header").append(formattedBioImg);
 $("#header").append(formattedWelcomeMsg);
+
+$("#topContacts").append(formattedBioMobile);
+$("#topContacts").append(formattedBioEmail);
+$("#topContacts").append(formattedBioLocation);
+$("#topContacts").append(formattedBioGit);
 
 /*if (bio.skills.length > 0){
 	var formattedBioSkills = HTMLskills.replace("%data%", bio.skills);
@@ -152,10 +160,10 @@ function displayWork() {
   	formattedJobDate = HTMLworkDates.replace("%data%", work.jobs[x].date);
   	formattedJobDescription = HTMLworkDescription.replace("%data%", work.jobs[x].Description);
   	$("#workExperience").append(HTMLworkStart);
-  	$(".work-entry:last").append(formattedEmployer);
-  	$(".work-entry:last").append(formattedJobTitle);  
+  	$(".work-entry:last").append(formattedEmployer+formattedJobTitle);
+  	//$(".work-entry:last").append(formattedJobTitle);
+  	$(".work-entry:last").append(formattedJobDate);   
   	$(".work-entry:last").append(formattedJobLocation); 
-  	$(".work-entry:last").append(formattedJobDate); 
   	$(".work-entry:last").append(formattedJobDescription); 
   }
 }
