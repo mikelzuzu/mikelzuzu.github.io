@@ -95,7 +95,7 @@ var project = {
 	{
 		"title" : "Recommender system",
 		"dates" : "March 2014 - Future",
-		"description" : "query suggestion area",
+		"description" : "Query suggestion area. Add new widget with suggestion in a third party web page (HUE)",
 		"images" : [
 			"images/hue.png",
 			"http://www.poolparty-software.com/wp-content/uploads/2013/03/recommender_systems.jpg"
